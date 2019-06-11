@@ -134,14 +134,12 @@ exports.getUser = function(req, res) {
 
 }
 exports.updateUser = function(req, res) {
-    User.findByIdAndUpdate({ _id: req.params.id }, req.body,(error, result) => {
-        console.log(req.body)
-        
-        if(error) {
-            return res.status(500).json({
-                message: 'Användaren uppdaterades inte i databasen!',
-                error: error
-            })
+    User.updateOne({ _id: req.params.id }, req.body)
+    .then((data) => {    
+        if(!data) {
+            return res.status(404).json({
+                message: 'Användaren uppdaterades inte i databasen!'
+            }).end()
         }
         return res.status(200).json({
             message: 'Användaren uppdateras i databasen'

@@ -33,7 +33,8 @@ getById(_id: number) {
   }
 
 update(user: User) {
-  return this.http.put(`${this._apiurl}/users/${user._id}`, user,{
+  console.log(user)
+  return this.http.put(`${this._apiurl}/users/${localStorage.getItem("USER_ID")}`, user,{
     headers:{
         'authorization': 'bearer ' + localStorage.getItem('ACCESS_TOKEN')
     }});

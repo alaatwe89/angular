@@ -23,27 +23,26 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.uppdateForm = this.formBuilder.group({
-      _id:[''],
-      firstname: ['', Validators.required],
-      mellanname: ['', Validators.required],      
-      lastname: ['', Validators.required],
-      birthday:['', Validators.required],
+      firstname: [''],
+      mellanname: [''],      
+      lastname: [''],
+      birthday:[''],
      
-      addresslinefaktura: ['', ],
-      postnumber:   ['', ],
-      invoicecity:   ['', ],
-      invoicecountry:['', ],
-      addressline: ['', ],
-      zipcode: ['', ],
-      city: ['', ],
-      email: ['', ],
-      password: ['', ]
+      addresslinefaktura: ['' ],
+      postnumber:   ['' ],
+      invoicecity:   ['' ],
+      invoicecountry:['' ],
+      addressline: [''],
+      zipcode: ['' ],
+      city: ['' ],
+      email: [''],
+      password: ['' ]
     })
   }
 
-  uppdate(user: User){
-    this.authService.update(user).subscribe(res => {
-      console.log(res)
+  uppdate(){
+    this.authService.update(this.uppdateForm.value).subscribe(res => {
+      console.log("får tillbaka: " + res)
       
       //this.user = res;
     });

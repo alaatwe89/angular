@@ -1,65 +1,65 @@
 <app-header></app-header><br>
 <div class="container">
-  <form action="" [formGroup]="uppdateForm" (ngSubmit)="uppdate(user)">
+  <form [formGroup]="uppdateForm" (ngSubmit)="uppdate()">
     <h3> Profile </h3>
     <div class="input-group mb-3">
-      <input type="text" class="form-control" formControlName="firstname" placeholder="{{ user.firstname}}" value="{{ user.firstname}}"
+      <input type="text" class="form-control" formControlName="firstname" placeholder="Skriv ditt förnamn" value="{{ user.firstname}}"
         aria-label="Recipient's username" aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="input-group-text" id="basic-addon2" >edit</button>
       </div>
     </div>
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="{{ user.lastname}}" aria-label="Recipient's username"
+      <input type="text" class="form-control" formControlName="lastname" value="{{ user.lastname}}" aria-label="Recipient's username"
         aria-describedby="basic-addon2">
       <div class="input-group-append">
-        <button class="input-group-text" id="basic-addon2" (click)="uppdate()">edit</button>
+        <button class="input-group-text" id="basic-addon2" >edit</button>
       </div>
     </div>
     <div class="input-group mb-3">
-      <input type="text" class="form-control"formControlName="birthday" placeholder="{{ user.birthday}}" aria-label="Recipient's username"
-        aria-describedby="basic-addon2">
-      <div class="input-group-append">
-        <button class="input-group-text" id="basic-addon2">edit</button>
-      </div>
-    </div>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control"formControlName="email" placeholder="{{ user.email}}" aria-label="Recipient's username"
+      <input type="text" class="form-control"formControlName="birthday" value="{{ user.birthday}}" aria-label="Recipient's username"
         aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="input-group-text" id="basic-addon2">edit</button>
       </div>
     </div>
     <div class="input-group mb-3">
-      <input type="text" class="form-control"formControlName="password" placeholder="{{ user.password}}" aria-label="Recipient's username"
+      <input type="text" class="form-control"formControlName="email" value="{{ user.email}}" aria-label="Recipient's username"
         aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="input-group-text" id="basic-addon2">edit</button>
       </div>
     </div>
     <div class="input-group mb-3">
-      <input type="text" class="form-control"formControlName="city" placeholder="{{ user.city}}" aria-label="Recipient's username"
+      <input type="text" class="form-control"formControlName="password" value="{{ user.password}}" aria-label="Recipient's username"
         aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="input-group-text" id="basic-addon2">edit</button>
       </div>
     </div>
     <div class="input-group mb-3">
-      <input type="text" class="form-control"formControlName="zipcode" placeholder="{{ user.zipcode}}" aria-label="Recipient's username"
+      <input type="text" class="form-control"formControlName="city" value="{{ user.city}}" aria-label="Recipient's username"
         aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="input-group-text" id="basic-addon2">edit</button>
       </div>
     </div>
     <div class="input-group mb-3">
-      <input type="text" class="form-control" formControlName="addresslinefaktura" placeholder="{{ user. addresslinefaktura}}"
+      <input type="text" class="form-control"formControlName="zipcode" value="{{ user.zipcode}}" aria-label="Recipient's username"
+        aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="input-group-text" id="basic-addon2">edit</button>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" formControlName="addresslinefaktura" value="{{ user. addresslinefaktura}}"
         aria-label="Recipient's username" aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="input-group-text" id="basic-addon2">edit</button>
       </div>
     </div>
     <div class="input-group mb-3">
-      <input type="text" class="form-control"formControlName="addressline" placeholder="{{ user. addressline}}" aria-label="Recipient's username"
+      <input type="text" class="form-control"formControlName="addressline" value="{{ user. addressline}}" aria-label="Recipient's username"
         aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="input-group-text" id="basic-addon2">edit</button>
