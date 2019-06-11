@@ -22,30 +22,36 @@ export class ProfileComponent implements OnInit {
   isSubmitted: boolean = false;
 
   ngOnInit() {
+    const _currentUser = JSON.parse(localStorage.getItem("CURRENT_USER"))
     this.uppdateForm = this.formBuilder.group({
-      firstname: [''],
-      mellanname: [''],      
-      lastname: [''],
-      birthday:[''],
+      firstname: [_currentUser.firstname, Validators.required],
+      mellanname: [_currentUser.mellanname, Validators.required],      
+      lastname: [_currentUser.lastname, Validators.required],
+      birthday:[_currentUser.birthday, Validators.required],
      
-      addresslinefaktura: ['' ],
-      postnumber:   ['' ],
-      invoicecity:   ['' ],
-      invoicecountry:['' ],
-      addressline: [''],
-      zipcode: ['' ],
-      city: ['' ],
-      email: [''],
-      password: ['' ]
+      addresslinefaktura: [_currentUser.addresslinefaktura ],
+      postnumber:   [_currentUser.postnumber ],
+      invoicecity:   [_currentUser.invoicecity ],
+      invoicecountry:[_currentUser.invoicecountry ],
+      addressline: [_currentUser.addressline],
+      zipcode: [_currentUser.zipcode ],
+      city: [_currentUser.city ],
+      email: [_currentUser.email],
+      password: [_currentUser.password ]
     })
   }
+  get formControls() { return this.uppdateForm.controls}
 
-  uppdate(){
-    this.authService.update(this.uppdateForm.value).subscribe(res => {
-      console.log("får tillbaka: " + res)
-      
-      //this.user = res;
-    });
-  }
+  uppdate( user: User){
+  
+    this.isSubmitted = true;
+    this.authService.update(this.uppdateForm.value).subscribe() 
+   
+     
+     
+     
+    };
+    
+  
 
 }

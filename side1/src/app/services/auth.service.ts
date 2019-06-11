@@ -26,6 +26,7 @@ export class AuthService {
 
 getById(_id: number) {
     return this.http.get(`${this._apiurl}/users/${_id}`);
+
 }
 
  register(_id: User) {
@@ -33,10 +34,16 @@ getById(_id: number) {
   }
 
 update(user: User) {
+
   console.log(user)
+  
+ 
   return this.http.put(`${this._apiurl}/users/${localStorage.getItem("USER_ID")}`, user,{
+  
     headers:{
         'authorization': 'bearer ' + localStorage.getItem('ACCESS_TOKEN')
+        
+      
     }});
 
 }
